@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/sujancode/flumbe-api/issues"
   },
-  "homepage": "https://github.com/sujancode/flumbe-api#readme"
+  "homepage": "https://github.com/sujancode/flumbe-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.17",
+    "morgan": "^1.10.0"
+  }
 }
