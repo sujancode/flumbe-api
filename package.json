@@ -4,8 +4,8 @@
   "description": "Api For FYP Project ",
   "main": "index.js",
   "scripts": {
-      "dev":"nodemon server.js",
-      "start":"node sever.js"
+    "dev": "nodemon server.js",
+    "start": "node sever.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,14 @@
   },
   "homepage": "https://github.com/sujancode/flumbe-api#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier": "2.2.1"
   }
 }
