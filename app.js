@@ -5,7 +5,7 @@ const morgan=require("morgan")
 const mongoose=require("mongoose")
 
 //Routes
-const userRoutes=require("./api/routes/user.route")
+const userRoutes=require("./api/routes/user.routes")
 const businessUserRoutes=require("./api/routes/businessUser.routes")
 const foodRoutes=require("./api/routes/food.routes")
 const historyRoutes=require("./api/routes/history.routes")
@@ -24,7 +24,7 @@ app.use("/users",userRoutes)
 app.use("/business-users",businessUserRoutes)
 app.use("/foods",foodRoutes)
 app.use("/history",historyRoutes)
-app.user("/normal-users",normalUserRoutes)
+app.use("/normal-users",normalUserRoutes)
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_USER}:${process.env.MONGO_ATLAS_PASS}@flumbecluster.gzs3w.mongodb.net/flumbeDB?retryWrites=true&w=majority`,
     {useNewUrlParser:true,useUnifiedTopology:true},()=>{
