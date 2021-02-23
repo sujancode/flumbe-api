@@ -2,7 +2,6 @@ const express=require("express")
 const body_parser=require("body-parser")
 const cors=require('cors')
 const morgan=require("morgan")
-const mongoose=require("mongoose")
 
 //Routes
 const userRoutes=require("./api/routes/user.routes")
@@ -26,10 +25,7 @@ app.use("/foods",foodRoutes)
 app.use("/history",historyRoutes)
 app.use("/normal-users",normalUserRoutes)
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_USER}:${process.env.MONGO_ATLAS_PASS}@flumbecluster.gzs3w.mongodb.net/flumbeDB?retryWrites=true&w=majority`,
-    {useNewUrlParser:true,useUnifiedTopology:true},()=>{
-    console.log("Database Connected")
-})
+
 
 app.use((req,res,next)=>{
     const error=new Error('Not Found')
