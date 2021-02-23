@@ -12,3 +12,5 @@ Router.patch("/:id",normalUserController.updateNormalUser)
 Router.get("/:id",normalUserController.getNormalUserById)
 
 Router.delete("/:id",normalUserController.removeNormalUser)
+
+module.exports = Router

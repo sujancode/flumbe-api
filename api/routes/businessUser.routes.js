@@ -10,3 +10,5 @@ Router.delete("/:id",businessController.removeBusiness)
 
 Router.post("/add-food-item",businessController.addFoodItem)
 Router.delete("/add-food-item",businessController.removeFoodItem)
+
+module.exports = Router
