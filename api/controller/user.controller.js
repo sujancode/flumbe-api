@@ -37,14 +37,49 @@ exports.getAllUsers=(req,res,next)=>{
 }
 
 exports.getUserById=(req,res,next)=>{
-    
+    const uid=req.params.uid
+    User.findById({uid:uid}).then(db_user=>{
+        if(db_user==null){
+            const err=new Error("User Not Found")
+            next(err)
+        }
+        res.status(200).json({
+            user:db_user
+        })
+    })
 }
 
 exports.updateUser=(req,res,next)=>{
+    const uid=req.params.uid
+
+    const updateOps={}
+
+    for(const item in req.body){
+        updateOps[item.propName]=item.value
+    }
+
+    User.findOneAndUpdate({uid:uid},{$set:updateOps})
+        .then(db_user=>{
+            res.status(200).json({
+                message:`Update User ${uid}`,
+                user:db_user
+            })
+        }).catch(err=>{
+            const error=new Error(err)
+            next(error)
+        })
 
 }
 
 exports.removeUser=(req,res,next)=>{
+    const uid=req.params.uid
+    User.findOneAndRemove({uid:uid})
+    .then(db_user=>{
 
+    })
+    .catch(err=>{
+        const error=new Error(err)
+        next(error)
+    })
 }
 

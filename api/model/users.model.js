@@ -6,3 +6,5 @@ const userSchema=mongoose.Schema({
     email:{type:String,require:true},
     account_type:{type:String,enum:["NORMAL","BUSINESS"],require:true}
 },{timestamps:true})
+
+module.exports = mongoose.model("User",userSchema)

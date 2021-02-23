@@ -14,7 +14,10 @@ app.use(body_parser.urlencoded({extended:false}))
 app.use(body_parser.json())
 app.use(cors())
 
-mongoose.connect()
+mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_USER}:${process.env.MONGO_ATLAS_PASS}@flumbecluster.gzs3w.mongodb.net/flumbeDB?retryWrites=true&w=majority`,
+    {useNewUrlParser:true,useUnifiedTopology:true},()=>{
+    console.log("Database Connected")
+})
 
 app.use("/user",userRoutes)
 

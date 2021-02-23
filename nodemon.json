@@ -1,6 +1,6 @@
 {
     "env":{
-        "MONGO-ATLAS-PASS":"B8WfTZku8FOJsAz7",
-        "MONGO-ATLAS-USER":"sujan079"
+        "MONGO_ATLAS_PASS":"dh8av4n3RaGX4HtS",
+        "MONGO_ATLAS_USER":"sujan079"
     }
 }
