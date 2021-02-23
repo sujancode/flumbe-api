@@ -109,6 +109,9 @@ exports.removeBusiness=(req,res,next)=>{
 
 exports.addFoodItem=(req,res,next)=>{
     const id=req.body.id
+    const food_items=req.body.food_items
+
+    
 
     
 }
