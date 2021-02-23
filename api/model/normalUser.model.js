@@ -5,6 +5,6 @@ const normalUserSchema=mongoose.Schema({
     uid:{type:String,require:true},
     profile_photo:{type:String},
     gender:{type:String,enum:["MALE","FEMALE"]}
-})
+},{timestamps:true})
 
 module.exports= mongoose.model("NormalUser",normalUserSchema)

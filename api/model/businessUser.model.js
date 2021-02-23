@@ -16,6 +16,6 @@ const businessUserSchema=mongoose.Schema({
         ref:"food"
     }
 
-})
+},{timestamps:true})
 
 module.exports = mongoose.model("BusinessUser",businessUserSchema)

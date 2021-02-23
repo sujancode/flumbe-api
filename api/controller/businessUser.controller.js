@@ -107,6 +107,12 @@ exports.removeBusiness=(req,res,next)=>{
 
 }
 
-exports.addFoodItem=(req,res,next)=>{}
+exports.addFoodItem=(req,res,next)=>{
+    const id=req.body.id
 
-exports.removeFoodItem=(req,res,next)=>{}
+    
+}
+
+exports.removeFoodItem=(req,res,next)=>{
+
+}
