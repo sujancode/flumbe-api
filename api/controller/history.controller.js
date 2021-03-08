@@ -29,6 +29,7 @@ exports.postHistory=(req,res,next)=>{
 }
 
 exports.getAllHistory=(req,res,next)=>{
+
     History.find()
     .then(db_histories=>{
         res.status(200).json({
@@ -42,8 +43,10 @@ exports.getAllHistory=(req,res,next)=>{
 }
 
 exports.getHistoryByUserId=(req,res,next)=>{
+    
     const user_id=req.params.id
-    History.find({user:id})
+
+    History.find({user:user_id})
     .then(db_histories=>{
         res.status(200).json({
             db_history:db_histories

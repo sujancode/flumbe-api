@@ -18,6 +18,7 @@ exports.getAllNormalUser=(req,res,next)=>{
 exports.getNormalUserById=(req,res,next)=>{
     
     const id=req.params.id
+    
 
     NormalUser.findById({_id:id}).then(db_user=>{
         if(db_user==null){
@@ -45,8 +46,9 @@ exports.postNormalUser=(req,res,next)=>{
         const _id=mongoose.Types.ObjectId()
         const gender=req.body.gender
         const profile_photo=req.body.profile_photo
+        const user_name=req.body.user_name
 
-        const normal_users=new NormalUser({_id:_id,uid:uid,gender:gender,profile_photo:profile_photo})
+        const normal_users=new NormalUser({_id:_id,uid:uid,gender:gender,profile_photo:profile_photo,user_name:user_name})
 
         return normal_users.save()
     })

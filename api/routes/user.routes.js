@@ -4,7 +4,7 @@ const userController=require("../controller/user.controller")
 
 Router.get("/",userController.getAllUsers)
 Router.post("/",userController.postUser)
-Router.get("/:uid",userController.updateUser)
+Router.get("/:uid",userController.getUserById)
 Router.patch("/:uid",userController.updateUser)
 Router.delete("/:uid",userController.removeUser)
 

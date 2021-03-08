@@ -6,14 +6,9 @@ const foodItemSchema=mongoose.Schema({
     category:{type:[String],require:true},
     price:{type:Number,require:true},
     description:{type:String,require:true},
-    rating:{type:Number},
+    rating:{type:Number,default:0},
     photos:{type:[String]},
-    ingredients:[
-        {
-            item_name:{type:String,require:true},
-            quantity:{type:Number,require:true}
-        }
-        ]
+    ingredients:[String]
 },{timestamps:true})
 
 module.exports = mongoose.model("food",foodItemSchema)

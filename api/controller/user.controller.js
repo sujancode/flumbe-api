@@ -1,3 +1,4 @@
+const mongoose  = require("mongoose")
 const User=require("../model/users.model")
 
 exports.postUser=(req,res,next)=>{
@@ -7,7 +8,7 @@ exports.postUser=(req,res,next)=>{
     const email=req.body.email
     const account_type=req.body.account_type
 
-    const user=new User({uid:uid,user_name:user_name,email:email,account_type:account_type})
+    const user=new User({_id:mongoose.Types.ObjectId(),uid:uid,user_name:user_name,email:email,account_type:account_type})
     
     user
     .save()
@@ -38,7 +39,7 @@ exports.getAllUsers=(req,res,next)=>{
 
 exports.getUserById=(req,res,next)=>{
     const uid=req.params.uid
-    User.findById({uid:uid}).then(db_user=>{
+    User.findOne({uid:uid}).then(db_user=>{
         if(db_user==null){
             const err=new Error("User Not Found")
             next(err)

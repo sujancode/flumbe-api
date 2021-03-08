@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node sever.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "csv-parser": "^3.0.0",
+    "faker": "^5.4.0",
     "nodemon": "^2.0.7",
     "prettier": "2.2.1"
   }
